@@ -1,0 +1,86 @@
+<!--
+  Generated template for the AttendanceDetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar style="background-color:btn">
+    <ion-title>Attendance Detail</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content no-padding>
+  <ion-refresher (ionRefresh)="refresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <ion-item-group>
+    <ion-item-divider style="color: #000 !important;font-size: 20px !important">
+
+      {{standardName+' / '+subjectName}}
+
+    </ion-item-divider>
+</ion-item-group>
+
+  <ion-card class="cardContainer">
+
+    <ion-grid>
+      <ion-row class="detailRow">
+        <ion-col class="colBorder" col-4>
+          {{totalD || 'NA'}}
+        </ion-col>
+        <ion-col class="colBorder" col-4>
+          {{(present == 0)?'0':present}}
+        </ion-col>
+        <ion-col col-4>
+          {{(absent == 0)?'0':absent}}
+        </ion-col>
+      </ion-row>
+      <ion-row class="subdetailRow">
+        <ion-col class="colBorder" col-4>
+          Total
+        </ion-col>
+        <ion-col class="colBorder" col-4>
+          Present
+        </ion-col>
+        <ion-col col-4>
+          Absent
+        </ion-col>
+      </ion-row>
+
+    </ion-grid>
+
+  </ion-card>
+
+
+  <ion-card class="cardContainer" *ngFor="let attendanceDataDetail of attendancedata">
+    <ion-item-group>
+      <ion-item-divider style="color: #003b8e">
+
+        {{attendanceDataDetail[0].LectureDate | date: 'EEE, MMMM d, y'}}
+
+      </ion-item-divider>
+
+      <ion-item style="border-bottom: 0.4px solid #f2f2f2" *ngFor="let attendanceData of attendanceDataDetail" text-nowrap>
+        <p text-wrap style="font-size: 16px;color: #1a2532;margin-top: 5px">{{attendanceData.TopicName}}</p>
+        
+        <!-- <p text-wrap style="margin-top: 5px" [ngClass]='(attendanceData.Presesnt == 1)?"closeTxt":(attendanceData.Absent == 1)?"openTxt":""'>Status : {{(attendanceData.Presesnt == 1)?'Present':(attendanceData.Absent == 1)?'Absent':"-" }}</p> -->
+
+        <p text-wrap style="margin-top: 5px;color: #999999;font-size: 1.3rem">{{(attendanceData.LectureTimeStart)}} - {{(attendanceData.LectureTimeEnd)}}</p>
+        <ion-icon style="color: #78B254" [ngClass]="attendanceData.Presesnt == 1 ?'statusClass present':'statusClass absent'" item-start>{{attendanceData.Presesnt == 1 ? 'P':'A'}}</ion-icon>
+      </ion-item>
+
+    </ion-item-group>
+  </ion-card>
+
+
+  <ion-card *ngIf="nodata">
+    <ion-item>
+      Data not available!
+    </ion-item>
+  </ion-card>
+
+</ion-content>

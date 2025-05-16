@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="Gradle: com.google.firebase:firebase-abt:17.1.1@aar">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/../../../AppOld/platforms/android/.gradle/4.10.3/caches/transforms-1/files-1.1/firebase-abt-17.1.1.aar/86499946e14555e26821b2664f9698c0/res" />
+      <root url="file://$PROJECT_DIR$/../../../AppOld/platforms/android/.gradle/4.10.3/caches/transforms-1/files-1.1/firebase-abt-17.1.1.aar/1373fb7c75dcabebeab510245d7464a9/AndroidManifest.xml" />
+      <root url="file://$PROJECT_DIR$/../../../AppOld/platforms/android/.gradle/4.10.3/caches/transforms-1/files-1.1/firebase-abt-17.1.1.aar/1373fb7c75dcabebeab510245d7464a9/res" />
+      <root url="jar://$PROJECT_DIR$/../../../AppOld/platforms/android/.gradle/4.10.3/caches/transforms-1/files-1.1/firebase-abt-17.1.1.aar/1373fb7c75dcabebeab510245d7464a9/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/../../../AppOld/platforms/android/.gradle/4.10.3/caches/modules-2/files-2.1/com.google.firebase/firebase-abt/17.1.1/d744794686c273d9fe2fdad77ee686c87a47625b/firebase-abt-17.1.1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES />
+  </library>
+</component>

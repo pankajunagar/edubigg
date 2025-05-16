@@ -1,0 +1,10 @@
+admission -> payOnline
+
+fcm -> get message : user role
+
+leaves -> ???
+
+schedule -> fetchDashboard
+
+student -> fetchPunches : 
+

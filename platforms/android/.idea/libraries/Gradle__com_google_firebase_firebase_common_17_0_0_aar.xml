@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="Gradle: com.google.firebase:firebase-common:17.0.0@aar">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/../../../AppOld/platforms/android/.gradle/4.10.3/caches/transforms-1/files-1.1/firebase-common-17.0.0.aar/0179da4b461b0a5b8285dbd86935bb3d/res" />
+      <root url="file://$PROJECT_DIR$/../../../AppOld/platforms/android/.gradle/4.10.3/caches/transforms-1/files-1.1/firebase-common-17.0.0.aar/fe8f14512ff32386e5d63e53081ffc82/res" />
+      <root url="file://$PROJECT_DIR$/../../../AppOld/platforms/android/.gradle/4.10.3/caches/transforms-1/files-1.1/firebase-common-17.0.0.aar/fe8f14512ff32386e5d63e53081ffc82/AndroidManifest.xml" />
+      <root url="jar://$PROJECT_DIR$/../../../AppOld/platforms/android/.gradle/4.10.3/caches/transforms-1/files-1.1/firebase-common-17.0.0.aar/fe8f14512ff32386e5d63e53081ffc82/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/../../../AppOld/platforms/android/.gradle/4.10.3/caches/modules-2/files-2.1/com.google.firebase/firebase-common/17.0.0/349c0060f9e1890abe26ca798f0c37a68885b34c/firebase-common-17.0.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES />
+  </library>
+</component>

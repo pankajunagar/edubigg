@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="Gradle: com.google.android.gms:play-services-measurement:16.5.0@aar">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/../../../AppOld/platforms/android/.gradle/4.10.3/caches/transforms-1/files-1.1/play-services-measurement-16.5.0.aar/23862ad1afadba6be3b45d08e21e25d1/res" />
+      <root url="jar://$PROJECT_DIR$/../../../AppOld/platforms/android/.gradle/4.10.3/caches/transforms-1/files-1.1/play-services-measurement-16.5.0.aar/2606554541d3832da12db820f4a94047/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/../../../AppOld/platforms/android/.gradle/4.10.3/caches/transforms-1/files-1.1/play-services-measurement-16.5.0.aar/2606554541d3832da12db820f4a94047/AndroidManifest.xml" />
+      <root url="file://$PROJECT_DIR$/../../../AppOld/platforms/android/.gradle/4.10.3/caches/transforms-1/files-1.1/play-services-measurement-16.5.0.aar/2606554541d3832da12db820f4a94047/res" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/../../../AppOld/platforms/android/.gradle/4.10.3/caches/modules-2/files-2.1/com.google.android.gms/play-services-measurement/16.5.0/6f497a7a1d35d1b6690bba8ca608250497cc6d26/play-services-measurement-16.5.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES />
+  </library>
+</component>

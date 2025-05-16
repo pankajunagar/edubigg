@@ -1,0 +1,2 @@
+# Referenced at D:\EduBiggApps\AppNewdeepak\platforms\android\app\build\intermediates\merged_manifests\release\processReleaseManifest\merged\AndroidManifest.xml:50
+-keep class android.support.multidex.MultiDexApplication { <init>(...); }

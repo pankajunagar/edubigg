@@ -1,0 +1,85 @@
+<!--
+  Generated template for the PerformancePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header class="home_header">
+
+    <ion-navbar style="background-color:btn">
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Performance</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+
+
+<ion-content no-padding>
+
+  <ion-refresher (ionRefresh)="refreshPerformance($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <!-- <ion-card class="cardContainer">
+
+
+    <ion-grid class="subDetail">
+
+      <ion-row class="headingData">
+        <ion-col class="headingTitle" col-4>
+            Subject
+        </ion-col>
+
+        <ion-col class="headingTitle" col-4>
+            Test given
+        </ion-col>
+
+        <ion-col class="headingTitle" col-4>
+            Performance (%)
+        </ion-col>
+      </ion-row>
+      <ion-row *ngFor="let performanceData of performance" (click)="rowClick(performanceData)">
+        <ion-col class="leftTxt longTxt" col-4> 
+          {{performanceData.SubjectName || 'NA'}}
+        </ion-col>
+        <ion-col class="rightTxt" col-4>
+            {{performanceData.ExamCount || 'NA'}}
+        </ion-col>
+        <ion-col class="rightTxt" col-4>
+            {{performanceData.Percentage || 'NA'}}
+        </ion-col>
+      </ion-row>
+
+    </ion-grid>
+  </ion-card> -->
+ 
+
+  <ion-card class="cardContainer" *ngFor="let performanceData of performance">
+    <ion-item-group>
+      <ion-item-divider style="color: #003b8e">
+
+        {{performanceData[0].StandardName}}
+
+      </ion-item-divider>
+
+      <ion-item *ngFor="let performanceDataDetails of performanceData" style="border-bottom: 0.4px solid #f2f2f2" (click)="rowClick(performanceDataDetails)" text-nowrap>
+        <p text-wrap style="font-size: 16px;color: #1a2532;margin-top: 5px">{{performanceDataDetails.SubjectName}}</p>
+        <p text-wrap style="margin-top: 5px">{{'Test Given : '+performanceDataDetails.ExamCount+(performanceDataDetails.Percentage == null ?' . Performance : N/A' :' . Performance : '+performanceDataDetails.Percentage+'%')}}</p>
+        <ion-icon name="ios-arrow-forward" item-end></ion-icon>
+       
+      </ion-item> 
+
+
+    </ion-item-group>
+  </ion-card>
+
+  <ion-card *ngIf="nodata">
+    <ion-item>
+        No test given.
+    </ion-item>
+  </ion-card>
+
+
+</ion-content>

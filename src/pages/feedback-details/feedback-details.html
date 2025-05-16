@@ -1,0 +1,55 @@
+<!--
+  Generated template for the FeedbackFormPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+  <ion-header>
+
+    <ion-navbar style="background-color:btn">
+      <ion-title>Feedback Details</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+
+
+<ion-content #content class="FeedbackDetailsPage"> 
+  <ion-grid>
+    <ion-row>
+      <ion-col col-12>
+          <ion-card>
+              <ion-card-header>
+                Title : {{Title}} <br>
+                <p style="white-space: pre-line;">{{desp}}</p>
+              </ion-card-header>
+          </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>  
+	<div *ngIf="IssueNotPickedUp == 1">
+		<ion-card *ngFor="let comment of feedbackDetail; let last=last">
+			<ion-card-content style="padding-top:17%;">
+			  <b>{{comment.commentuser}}</b><br>
+			  <small>on {{comment.IssueDate1}} at {{comment.IssueTime}}</small>
+			  <p>{{comment.IssueComment}}</p>
+			</ion-card-content>
+		</ion-card>
+	</div>
+	
+  
+</ion-content>
+
+<div *ngIf="IssueNotPickedUp == 1">
+<ion-footer>
+  <div style="text-align: center">
+    <ion-list >
+        <ion-item >
+          <ion-textarea type="text" placeholder="Write here..." [(ngModel)]='comment'></ion-textarea>
+           <button ion-button clear (click)="sendComment()" item-end >
+              <ion-icon ios="ios-send" md="md-send" style="font-size:32px;"> </ion-icon>
+          </button>
+        </ion-item>
+    </ion-list>
+  </div>
+</ion-footer>
+</div>

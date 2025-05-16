@@ -1,0 +1,211 @@
+<!--
+  Generated template for the AdmissionDetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Admission Detail</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content no-padding>
+
+  
+  <ion-card class="cardContainer" >
+
+    <ion-item-group>
+
+    
+      <ion-item-divider style="color: #003b8e">
+
+         
+        {{ CourseName }}
+
+      </ion-item-divider>
+
+
+      <ion-item-group style="margin-top: 20px" *ngIf="OnlyOutstanding != 0">
+          <ion-item style="align-items: left;min-height: 3.4rem;">
+              <ion-label class="subLbl">Admission Date</ion-label>
+              <ion-label class="subLbl">{{admissionDate | date: 'd MMMM, y'}}</ion-label>
+          </ion-item>
+
+          <ion-item style="align-items: left;min-height: 3.4rem;">
+              <ion-label class="subLbl">Fees</ion-label>
+              <ion-label class="subLbl">₹{{fees.toLocaleString()}}</ion-label>
+          </ion-item>
+
+          <ion-item style="align-items: left;min-height: 3.4rem;">
+              <ion-label class="subLbl">Additional Fees</ion-label>
+              <ion-label class="subLbl">₹{{additionalFees.toLocaleString()}}</ion-label>
+          </ion-item>
+
+          <ion-item style="align-items: left;min-height: 3.4rem;" *ngIf="discount != 0" >
+            <ion-label class="subLbl">Discount</ion-label>
+            <ion-label class="subLbl">₹{{discount}}</ion-label>
+          </ion-item>
+
+          <ion-item style="align-items: left;min-height: 3.4rem;">
+              <ion-label class="subLbl">Total</ion-label>
+              <ion-label class="subLbl">₹{{total.toLocaleString()}}</ion-label>
+          </ion-item>
+        </ion-item-group>
+
+        <hr style="color: #dedede;height: 2px">
+
+      <ion-grid>
+        
+        <ion-row class="subdetailRow" *ngIf="OnlyOutstanding != 0">
+          <ion-col class="colBorder" col-6>
+            Total 
+          </ion-col>
+          <ion-col col-6>
+            Paid
+          </ion-col>
+        </ion-row>
+
+        <ion-row class="detailRow" *ngIf="OnlyOutstanding != 0">
+            <ion-col class="colBorder" col-6>
+              <!-- {{ 'Rs.'+total_.toLocaleString()}}{{(EnableTax == 0) ?'(w/o tax)':'(incl. taxes)' }} -->
+              {{ '₹ '+total_.toLocaleString()}}{{ total_!=0 ? (EnableTax == 0 && IncludeTax ==1) ?'(w/o tax)': (EnableTax == 0 && IncludeTax ==0)?'(incl. taxes)':'' :'' }}
+            </ion-col>
+            <ion-col col-6>
+              <!-- {{ 'Rs.'+(EnableTax == 0 ?(Amount_).toLocaleString()+'(w/o tax)':(Amount_+ServiceTaxTotal).toLocaleString()+'(incl. taxes)') }} -->
+            {{'₹ '+paid_.toLocaleString()}}{{ paid_!=0 ? (EnableTax == 0 && IncludeTax ==1) ?'(w/o tax)': (EnableTax == 0 && IncludeTax ==0)?'(incl. taxes)':'' :'' }}
+            </ion-col>
+          </ion-row>
+
+        
+        <ion-row class="subdetailRow" *ngIf="OnlyOutstanding != 0">
+          <ion-col class="colBorder" col-6>
+            Balance
+          </ion-col>
+          <ion-col col-6 >
+            Uncleared
+          </ion-col>
+        </ion-row>
+        <ion-row class="detailRow" *ngIf="OnlyOutstanding != 0">
+            <ion-col class="colBorder" col-6>
+              <!-- {{ 'Rs.'+(StudentCourseFees - (EnableTax == 0 ?Amount_:(Amount_+ServiceTaxTotal))).toLocaleString() + (EnableTax == 0 ? ((StudentCourseFees - (EnableTax == 0 ?Amount_:(Amount_+ServiceTaxTotal))) !=0)?'(w/o tax)':'':((StudentCourseFees - (EnableTax == 0 ?Amount_:(Amount_+ServiceTaxTotal)))!=0)?'(incl. taxes)':'')  }} -->
+              {{'₹ '+balance_.toLocaleString()}}{{ balance_!=0 ? (EnableTax == 0 && IncludeTax ==1) ?'(w/o tax)': (EnableTax == 0 && IncludeTax ==0)?'(incl. taxes)':'' :'' }}
+            </ion-col>
+            <ion-col col-6 > 
+              {{ '₹ '+ (uncleared_.toLocaleString() || 0)  }}{{ uncleared_!=0 ? (EnableTax == 0 && IncludeTax ==1) ?'(w/o tax)': (EnableTax == 0 && IncludeTax ==0)?'(incl. taxes)':'' :'' }}
+            </ion-col>
+          </ion-row>
+
+        <ion-row class="subdetailRow" *ngIf="OnlyOutstanding != 0">
+          <ion-col col-12>
+            Bounced
+          </ion-col>
+        </ion-row>
+        <ion-row class="detailRow" *ngIf="OnlyOutstanding != 0">
+            <ion-col col-12>
+              <!-- {{ 'Rs.'+bounceAmount.toLocaleString() +(EnableTax == 0 ?(bounceAmount !=0?'(w/o tax)':''):(bounceAmount !=0 ? '(incl. taxes)':''))}}  -->
+              {{'₹ '+bounced_.toLocaleString()}}{{ bounced_!= 0 ? (EnableTax == 0 && IncludeTax ==1) ?'(w/o tax)': (EnableTax == 0 && IncludeTax ==0)?'(incl. taxes)':'' :'' }}
+            </ion-col>
+          </ion-row>
+
+        <ion-row class="subdetailRow" *ngIf="OnlyOutstanding == 0">
+          <ion-col class="colBorder" col-6>
+            <b style="font-size: 19px"> Balance </b>
+          </ion-col>
+          <ion-col col-6 >
+            <b style="font-size: 19px"> {{'₹ '+balance_.toLocaleString()}}{{ balance_!=0 ? (EnableTax == 0 && IncludeTax ==1) ?'(w/o tax)': (EnableTax == 0 && IncludeTax ==0)?'(incl. taxes)':'' :'' }} </b>
+          </ion-col>
+		   
+        </ion-row>
+      </ion-grid>
+
+    
+    
+      <ion-item style="font-weight: bold;font-size: 17px;color: #78B254" *ngIf="table5Flag" >Paid</ion-item>
+	  <ion-item-group *ngIf="table5Flag" >
+        <ion-item style="border-bottom: 0.4px solid #f2f2f2" *ngFor="let paidData of table5" text-nowrap >
+          <p text-wrap style="font-size: 16px;color: #1a2532;margin-top: 5px">₹ {{(paidData.Amount+paidData.ServiceTaxTotal).toLocaleString()}} </p>
+          <p text-wrap style="margin-top: 5px" *ngIf="paidData.ServiceTaxTotal != 0">( Basic: {{(paidData.Amount).toLocaleString()}}/- + Tax: {{(paidData.ServiceTaxTotal).toLocaleString()}}/- )</p>
+          <p text-wrap style="margin-top: 15px">paid on {{paidData.PaidDate | date: 'd MMMM, y'}} by {{paidData.PaymentModeName}}.</p>
+          <ion-icon name="md-print" style="color: #78B254" (click)="printFees(paidData)" item-end></ion-icon>
+        </ion-item>
+      </ion-item-group>
+	
+
+
+      <!-- <hr style="color: #dedede;height: 2px" *ngIf="table5Flag"> -->
+		<hr style="color: #dedede;height: 2px">
+      <ion-item style="font-weight: bold;font-size: 17px;color: red" *ngIf="table7Flag" >Unpaid</ion-item>
+      <ion-item-group>
+          <ion-item style="border-bottom: 0.4px solid #f2f2f2" *ngFor="let unpaidData of table7" text-nowrap>
+            <p text-wrap style="font-size: 16px;color: #1a2532;margin-top: 5px">₹ {{(unpaidData.Amount).toLocaleString()}}</p>
+            <p text-wrap style="margin-top: 5px">due on {{unpaidData.PaymentDate | date: 'd MMMM, y'}}.</p>
+            <ion-icon *ngIf="unpaidData.PAY_ONLINE == 1" name="md-card" style="color: #78B254" (click)="payFees(unpaidData)" item-end></ion-icon>
+          </ion-item>
+        </ion-item-group> 
+
+        <!-- <hr style="color: #dedede;height: 2px" *ngIf="table6Flag"> -->
+
+
+        <ion-item style="font-weight: bold;font-size: 17px;color: red"  *ngIf="table8Flag" >Bounced Cheques</ion-item>
+      <ion-item-group>
+          <ion-item style="border-bottom: 0.4px solid #f2f2f2" *ngFor="let bouncedData of table8"  text-nowrap>
+            <p text-wrap style="font-size: 16px;color: #1a2532;margin-top: 5px">₹ {{(bouncedData.Amount+bouncedData.ServiceTaxTotal).toLocaleString()}}</p>
+            <p text-wrap style="margin-top: 5px" *ngIf="bouncedData.ServiceTaxTotal != 0">( Basic: {{(bouncedData.Amount)}}/- + Tax: {{(bouncedData.ServiceTaxTotal)}}/- )</p>
+            <p text-wrap style="margin-top: 15px">Bounced on {{bouncedData.ChequeBouncedDate | date: 'd MMMM, y'}} by Cheque of {{bouncedData.ChequeBankName}} {{bouncedData.ChequeNumber}} dated {{bouncedData.ChequeDate | date: 'd MMMM y'}}</p>
+          </ion-item>
+        </ion-item-group>
+
+
+
+       
+
+
+        <!-- <ion-item style="font-weight: bold;font-size: 17px;">{{ CourseName }}</ion-item> -->
+      <!-- <ion-item-group>
+          <ion-item style="align-items: left;min-height: 3.4rem;">
+              <ion-label class="subLbl">Admission Date</ion-label>
+              <ion-label class="subLbl">{{admissionDate | date: 'd MMMM, y'}}</ion-label>
+          </ion-item>
+
+          <ion-item style="align-items: left;min-height: 3.4rem;">
+              <ion-label class="subLbl">Fees</ion-label>
+              <ion-label class="subLbl">Rs.{{fees.toLocaleString()}}</ion-label>
+          </ion-item>
+
+          <ion-item style="align-items: left;min-height: 3.4rem;">
+              <ion-label class="subLbl">Additional Fees</ion-label>
+              <ion-label class="subLbl">Rs.{{additionalFees.toLocaleString()}}</ion-label>
+          </ion-item>
+
+          <ion-item style="align-items: left;min-height: 3.4rem;" *ngIf="discount != 0" >
+            <ion-label class="subLbl">Discount</ion-label>
+            <ion-label class="subLbl">Rs.{{discount.toLocaleString()}}</ion-label>
+          </ion-item>
+
+          <ion-item style="align-items: left;min-height: 3.4rem;">
+              <ion-label class="subLbl">Total</ion-label>
+              <ion-label class="subLbl">Rs.{{total.toLocaleString()}}</ion-label>
+          </ion-item>
+        </ion-item-group> -->
+
+    </ion-item-group>
+
+  </ion-card>
+
+  <ion-card *ngIf="nodata">
+    <ion-item>
+      Data not available!
+    </ion-item>
+  </ion-card>
+
+  <ion-card *ngIf="nohit">
+    <ion-item>
+      Data not available!
+    </ion-item>
+  </ion-card>
+
+</ion-content>

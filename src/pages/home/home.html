@@ -1,0 +1,23 @@
+<!-- <ion-menu [content]="content" (ionOpen)="menuOpened()" (ionClose)="menuClosed()" id="menu1">
+
+  <ion-content style="background-color: #1a2532">
+
+
+    <ion-row style="justify-content: center">
+      <img class="userImg" [src]="studentImage" >
+    </ion-row>
+    <h4 style="text-align: center;color: #fff;margin-left: 10px;margin-right: 10px;">{{studentName}}</h4>
+    <hr style="margin-top: 20px;background-color:#233143;" /> 
+    <ion-list>
+      <button menuClose ion-button icon-left full clear style="border-bottom: 1px solid #233143" *ngFor="let item of items" (click)="sliderClick($event,item)">
+        <ion-icon name="{{item.icon}}" class="sliderIcon"></ion-icon>
+        <ion-label class="sliderLbl" text-capitalize>{{item.name}}</ion-label>
+        <hr/>
+      </button>
+    </ion-list>
+  </ion-content>
+
+</ion-menu> -->
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" [rootParams]="studentData" #content swipeBackEnabled="false"></ion-nav>

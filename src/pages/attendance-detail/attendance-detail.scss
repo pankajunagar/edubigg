@@ -1,0 +1,38 @@
+page-attendance-detail {
+    .headingData {
+        background: color($colors,'themeColor');
+        color: #fff
+    }
+    .headingData .col{
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        color: #fff
+    }
+    .subDetail .row {
+    text-align: center;
+    height: 45px;
+    align-items: center;
+    border-bottom: 1px solid #e6e6e6
+}
+.bold{
+    font-weight: bold
+}
+.statusClass {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    font-size: 24px;
+    color: white !important;
+    padding-top: 2px 
+}
+.present {
+    content :"P";
+    background-color: #5DBB59;
+}
+
+.absent {
+    content :"A";
+    background-color: #F7403A;
+}
+}

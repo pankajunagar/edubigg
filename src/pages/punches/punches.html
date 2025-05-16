@@ -1,0 +1,94 @@
+<!--
+  Generated template for the PunchesPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<!-- <ion-header>
+
+  <ion-navbar>
+    <ion-title>punches</ion-title>
+  </ion-navbar>
+
+</ion-header> -->
+
+<ion-header class="home_header">
+
+    <ion-navbar style="background-color:btn">
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Punches</ion-title>
+    </ion-navbar>
+  
+  <ion-card style="width: 100%;margin:0;">
+        <ion-grid>
+            <ion-row>
+                <ion-col col-5 text-center>From Date</ion-col>
+                <ion-col col-5 text-center>To Date</ion-col>
+                <ion-col></ion-col>
+            </ion-row>
+            <ion-row>
+
+                <ion-col col-5>
+                    <button ion-button block outline class="datebtn">
+                        <ion-datetime displayFormat='MMM DD, YYYY' placeholder="DD-MM-YYYY" (ionChange)="getStartDate()" [(ngModel)]="fromDate" min="2012" max="2030-12-31"></ion-datetime>
+                    </button>
+                </ion-col>
+
+                <ion-col col-5>
+                    <button ion-button block outline class="datebtn">
+                        <ion-datetime displayFormat="MMM DD, YYYY" placeholder="DD-MM-YYYY" (ionChange)="getStartDate()" [(ngModel)]="toDate" min="2012" max="2030-12-31"></ion-datetime>
+                    </button>
+                </ion-col>
+
+                <ion-col col-2>
+                    <button ion-button block (click)="resetData()">
+                        <ion-icon name="md-refresh"></ion-icon>
+                    </button>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+  </ion-card>
+  </ion-header>
+
+
+<ion-content no-padding>
+	
+
+    <ion-refresher (ionRefresh)="refresh($event)"> 
+        <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+
+ <div *ngIf="nodata == false">
+	<ion-card *ngFor="let punch of finalArray">
+	  <ion-card-header class="date">
+		{{punch[0].BioMetricDate }}
+	  	<!--{{punch[0].BioMetricLogInDate | date:'EEE, MMM dd, yyyy' }} -->
+
+	     
+	  </ion-card-header>
+	  <ion-card-content class="cardContent" *ngFor="let x of punch">
+	     <ion-grid>
+	     	<ion-row> 
+	     		<!--{{x.BioMetricLogInDate | date:' h:mm a' }}-->
+				{{x.BioMetricTime}}
+	     		<span class="in" *ngIf="x.BiometricType == 1"> IN </span>
+          <span class="in" *ngIf="x.BiometricType == 2"> OUT </span>
+	     	</ion-row> 
+	     </ion-grid>
+	  </ion-card-content>
+	</ion-card>
+  </div>
+
+
+  <ion-card *ngIf="nodata == true">
+  
+    <ion-card-header>
+      No punches found for the selected date range.
+    </ion-card-header>
+  
+  </ion-card>
+
+	
+</ion-content>

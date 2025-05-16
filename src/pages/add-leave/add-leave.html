@@ -1,0 +1,64 @@
+<!--
+  Generated template for the AddLeavePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Add Leave</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row center style="margin-top: 30px">
+      <ion-col col-12>
+
+        <ion-list>
+          <form [formGroup]="leaveForm" class="formContainer">
+
+            <ion-item>
+              <ion-label floating>Start Date</ion-label>
+              <ion-datetime displayFormat='MMM DD, YYYY' formControlName="fromDate" [(ngModel)]="fromDate"></ion-datetime>
+            </ion-item>
+            <p class="errorClass" *ngIf="!leaveForm.controls.fromDate.valid  && (leaveForm.controls.fromDate.dirty || submitAttempt)">* Please Select start date</p>
+
+            <ion-item>
+              <ion-label floating>End Date</ion-label>
+              <ion-datetime displayFormat='MMM DD, YYYY' formControlName="toDate" [(ngModel)]="toDate"></ion-datetime>
+            </ion-item>
+            <p class="errorClass" *ngIf="!leaveForm.controls.toDate.valid  && (leaveForm.controls.toDate.dirty || submitAttempt)">* Please Select end date</p>
+
+            <ion-item>
+              <ion-label floating>Note</ion-label>
+              <ion-textarea (keypress)="noteHandler($event.keyCode)" type="text" formControlName="note" [(ngModel)]="note"></ion-textarea>
+            </ion-item>
+            <p class="errorClass" *ngIf="!leaveForm.controls.note.valid  && (leaveForm.controls.note.dirty || submitAttempt)">* Please enter note</p>
+
+            <ion-item>
+              <ion-label>I hereby confirm the terms & <br>conditions from branch for add <br>leave.</ion-label>
+              <ion-checkbox color="blue" (click)="showbutton()"></ion-checkbox>
+              <!-- <ion-label >I hereby confirm the terms & conditions from branch for add leave.</ion-label>
+              <ion-checkbox></ion-checkbox> -->
+            </ion-item>
+          </form>
+
+          <!-- <button (click)="login()"  ion-button color="danger" outline block>Log In</button> -->
+          <div *ngIf="check">
+               <button ion-button (click)="addLeave()" style="margin-top: 20px" block color="btn" > Add Leave</button>
+           </div>
+
+           <!-- <div *ngIf="check == false">
+               <span style="margin-top: 20px" block color="btn" > Add Leave</span>
+           </div> -->
+          
+
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

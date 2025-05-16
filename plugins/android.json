@@ -1,0 +1,55 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-appavailability": {
+      "PACKAGE_NAME": "com.AvalonLSPIS"
+    },
+    "cordova-plugin-badge": {
+      "PACKAGE_NAME": "com.AvalonLSPIS"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "com.AvalonLSPIS"
+    },
+    "cordova-plugin-firebase-lib": {
+      "PACKAGE_NAME": "com.AvalonLSPIS"
+    },
+    "cordova-plugin-inappbrowser": {
+      "PACKAGE_NAME": "com.AvalonLSPIS"
+    },
+    "cordova-plugin-ionic-keyboard": {
+      "PACKAGE_NAME": "com.AvalonLSPIS"
+    },
+    "cordova-plugin-ionic-webview": {
+      "PACKAGE_NAME": "com.AvalonLSPIS"
+    },
+    "cordova-plugin-local-notification": {
+      "PACKAGE_NAME": "com.AvalonLSPIS"
+    },
+    "cordova-plugin-network-information": {
+      "PACKAGE_NAME": "com.AvalonLSPIS"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "com.AvalonLSPIS"
+    },
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "com.AvalonLSPIS"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.AvalonLSPIS"
+    }
+  },
+  "dependent_plugins": {
+    "cordova-support-google-services": {
+      "PACKAGE_NAME": "com.AvalonLSPIS"
+    },
+    "phonegap-plugin-multidex": {
+      "PACKAGE_NAME": "com.AvalonLSPIS"
+    }
+  }
+}

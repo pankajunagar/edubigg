@@ -1,0 +1,58 @@
+<!--
+  Generated template for the FeedbackFormPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar style="background-color:btn">
+      <ion-title>Feedback</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+
+
+<ion-content padding> 
+<ion-grid>
+    <ion-row center style="margin-top: 30px">
+        <ion-col col-12>
+         
+          <ion-list>
+              <form [formGroup]="feedbackForm" class="formContainer">
+              <ion-item>
+                  <ion-label>Type</ion-label>
+                  <ion-select [(ngModel)]="Type" formControlName="type">
+                    <ion-option>Feedback</ion-option>
+                    <ion-option>Complaint</ion-option>
+                    <ion-option>Suggestion</ion-option>
+                    <ion-option>Compliment</ion-option>
+                  </ion-select>
+              </ion-item>
+                <p class="errorClass" *ngIf="!feedbackForm.controls.type.valid  && (feedbackForm.controls.type.dirty || submitAttempt)">* Please select type</p>
+            <ion-item>
+              <ion-label floating>Title</ion-label>
+              <ion-input type="text" (keypress)="noteHandler($event.keyCode, 'title')" formControlName="title" [(ngModel)]="title"></ion-input>
+            </ion-item>
+            <p class="errorClass" *ngIf="!feedbackForm.controls.title.valid  && (feedbackForm.controls.title.dirty || submitAttempt)">* Please enter title</p>
+           
+                <ion-item>
+              <ion-label floating>Description</ion-label>
+              <ion-textarea type="text" (keypress)="noteHandler($event.keyCode, 'description')" formControlName="desc" class="no-validation-line" [(ngModel)]="description"></ion-textarea>
+            </ion-item>
+            <br>
+            <p class="errorClass" *ngIf="!feedbackForm.controls.desc.valid  && (feedbackForm.controls.desc.dirty || submitAttempt)">* Please enter description</p>
+            
+            </form>
+            <ion-item>
+              <!-- <button (click)="login()"  ion-button color="danger" outline block>Log In</button> -->
+              <button ion-button (click)="postFeedback()"  block color="btn">Add feedback</button>
+  
+            </ion-item>
+          
+          </ion-list>
+       
+        </ion-col>
+      </ion-row>
+</ion-grid>
+</ion-content>

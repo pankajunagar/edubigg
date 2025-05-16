@@ -1,0 +1,104 @@
+page-attendance {
+    .headingData {
+        background: color($colors,'themeColor');
+        color: #fff
+    }
+    .headingData .col{
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        color: #fff
+    }
+    .subDetail .row {
+    text-align: center;
+    height: 45px;
+    align-items: center;
+    border-bottom: 1px solid #e6e6e6
+}
+.longTxt{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+// .detailRow{
+//     align-items: flex-end;
+//     text-align: center;
+//     height: 40px;
+//     font-weight: bold;
+//     font-size: 18px;
+//     color: color($colors,'themeColor')
+// }
+// .subdetailRow{
+//     align-items: center;
+//     text-align: center;
+//     font-size: 14px;
+//     color: #666;
+//     padding-bottom: 12px;
+//     border-bottom: 0.5px solid #dedede 
+// }
+// .colBorder {
+//     border-right: 0.5px solid #dedede 
+// }
+}
+
+.detailRow{
+    align-items: flex-end;
+    text-align: center;
+    height: 40px;
+    font-weight: bold;
+    font-size: 18px;
+    color: color($colors,'themeColor')
+}
+.subdetailRow{
+    align-items: center;
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+    padding-bottom: 12px;
+    border-bottom: 0.5px solid #dedede 
+}
+.colBorder {
+    border-right: 0.5px solid #dedede 
+}
+.present {
+    content :"P";
+    background-color: #5DBB59;
+    padding-left: 9px;
+}
+
+.absent {
+    content :"A";
+    background-color: #F7403A;
+    padding-left: 6px;
+}
+
+.card-md + ion-card {
+    margin-top: 3%;
+}
+
+.dateFont{
+    font-size: 1.3em;
+    padding-top: 4px !important;
+}
+
+.statusClass {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    font-size: 24px;
+    color: white !important;
+    padding-top: 2px 
+}
+
+.card-header {
+    padding: 3%;
+}
+
+.card-content {
+    margin-top: -7%;
+    margin-bottom: -3%;
+}
+
+#status{
+    margin-top:3%
+}

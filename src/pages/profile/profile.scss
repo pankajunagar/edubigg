@@ -1,0 +1,43 @@
+page-profile {
+    .headingData {
+        background: color($colors,'themeColor');
+        color: #fff
+    }
+    ion-label{
+        white-space: normal;
+    }
+    .userImg{
+        width: 120px;
+        height: 120px;
+        border-radius: 60px;
+        overflow: hidden;
+        padding: 12px;
+        
+    }
+    .marginTop30{
+        margin-top: 30px
+    }
+    .subDetail .row {
+      //  text-align: center;
+        height: auto;
+        align-items: center;
+       // border-bottom: 1px solid #e6e6e6
+    }
+    .item-ios item-md ion-avatar img {
+        width: 85px;
+        height: 80px;
+        border-radius: 0;
+        overflow: hidden;
+    }
+    
+    .item-md ion-avatar img {
+        width: 120px;
+        height: 120px;
+        border-radius: 60px;
+        overflow: hidden;
+        padding: 12px;
+}
+.profileLeftTxt {
+    color: black
+}
+}

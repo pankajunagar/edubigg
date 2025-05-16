@@ -1,0 +1,84 @@
+<!--
+  Generated template for the AttendancePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header class="home_header">
+
+  <ion-navbar style="background-color:btn">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Attendance</ion-title>
+  </ion-navbar>
+  <ion-card style="width: 100%;margin:0;">
+        <ion-grid>
+            <ion-row>
+                <ion-col col-5 text-center>From Date</ion-col>
+                <ion-col col-5 text-center>To Date</ion-col>
+                <ion-col></ion-col>
+            </ion-row>
+            <ion-row>
+
+                <ion-col col-5>
+                    <button ion-button block outline class="datebtn">
+                        <ion-datetime displayFormat='MMM DD, YYYY' placeholder="DD-MM-YYYY" (ionChange)="getStartDate()" [(ngModel)]="fromDate" min="2012" max="2030-12-31"></ion-datetime>
+                    </button>
+                </ion-col>
+
+                <ion-col col-5>
+                    <button ion-button block outline class="datebtn">
+                        <ion-datetime displayFormat="MMM DD, YYYY" placeholder="DD-MM-YYYY" (ionChange)="getStartDate()" [(ngModel)]="toDate" min="2012" max="2030-12-31"></ion-datetime>
+                    </button>
+                </ion-col>
+
+                <ion-col col-2>
+                    <button ion-button block (click)="resetData()">
+                        <ion-icon name="md-refresh"></ion-icon>
+                    </button>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-card>
+</ion-header>
+
+
+<ion-content no-padding>
+  
+    <ion-refresher (ionRefresh)="refresh($event)"> 
+        <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+
+ <div *ngIf="!nodata">
+  <ion-card class="cardContainer" *ngFor="let x of finalArray">
+      
+      <ion-card-header>
+       <p> <ion-datetime class="dateFont" displayFormat="DDD, MMM D, YYYY" [(ngModel)]="x[0].LectureDate"></ion-datetime></p>
+      </ion-card-header>
+     
+
+      <ion-card-content *ngFor="let y of x">
+        <ion-grid>
+          <ion-row >
+            <ion-col col-2 id="status">
+              <ion-icon  [ngClass]="y.PresentAbsent == 0 ?'statusClass present':'statusClass absent'" item-start>{{y.PresentAbsent == 0 ? 'P':'A'}}</ion-icon>
+            </ion-col>
+            <ion-col col-10>
+              <p>  {{y.StandardName}} - {{y.SubjectName}}</p> 
+              <p>  {{y.LectureTimeStart}} - {{y.LectureTimeEnd}}</p> 
+              <ion-note> Topics : {{y.TopicName}}</ion-note>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card-content>
+    
+  </ion-card>
+  </div>
+
+  <ion-card *ngIf="nodata">
+    <ion-item>
+     No attendance found for the selected date range.
+    </ion-item>
+  </ion-card>
+</ion-content>

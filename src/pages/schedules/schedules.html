@@ -1,0 +1,132 @@
+<!--
+  Generated template for the SchedulesPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+--> 
+<ion-header class="home_header">
+
+    <ion-navbar style="background-color:btn">
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Schedules</ion-title>
+    </ion-navbar>
+    
+    <ion-card style="width: 100%;margin:0;">
+        <ion-grid>
+            <ion-row>
+                <ion-col col-5 text-center>From Date</ion-col>
+                <ion-col col-5 text-center>To Date</ion-col>
+                <ion-col></ion-col>
+            </ion-row>
+            <ion-row>
+
+                <ion-col col-5>
+                    <button ion-button block outline class="datebtn">
+                        <ion-datetime displayFormat='MMM DD, YYYY' placeholder="DD-MM-YYYY" (ionChange)="getStartDate()" [(ngModel)]="fromDate" min="2012" max="2030-12-31"></ion-datetime>
+                    </button>
+                </ion-col>
+
+                <ion-col col-5>
+                    <button ion-button block outline class="datebtn">
+                        <ion-datetime displayFormat="MMM DD, YYYY" placeholder="DD-MM-YYYY" (ionChange)="getStartDate()" [(ngModel)]="toDate" min="2012" max="2030-12-31"></ion-datetime>
+                    </button>
+                </ion-col>
+
+                <ion-col col-2>
+                    <button ion-button block (click)="resetData()">
+                        <ion-icon name="md-refresh"></ion-icon>
+                    </button>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-card>
+
+</ion-header>
+
+<ion-content no-padding>
+
+
+    <ion-refresher (ionRefresh)="refresh($event)">
+        <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+
+    
+    <ion-card class="cardContainer" *ngFor="let scheduleData of schedule">
+            <ion-item-group>
+                    <ion-item-divider style="color: #003b8e">
+        <!-- <ion-item style="background-color: #1a2532;font-size: 18px;font-weight: bold;color: #fff"> -->
+            {{scheduleData[0].LectureDate | date: 'EEE, MMMM d, y' }}
+        <!-- </ion-item> -->
+        </ion-item-divider>
+        
+        <ion-item *ngFor="let scheduleDataDetails of scheduleData" style="border-bottom: 0.4px solid #f2f2f2"  (click)="openSchedule(scheduleDataDetails)" text-nowrap>
+            <ion-avatar item-left>
+                <ion-icon name="{{ !stringIsNumber(scheduleDataDetails.FacultyName) ?'md-bookmarks':'md-clipboard'}}" [ngClass]="stringIsNumber(scheduleDataDetails.FacultyName) ?'testClassColor':'lectureClassColor'"  style="font-size: 30px"></ion-icon>
+            </ion-avatar> 
+            <p text-wrap style="font-size: 16px;color: #1a2532;margin-top: 5px">{{scheduleDataDetails.StandardName}} - {{scheduleDataDetails.SubjectName}}</p>
+            <!-- <p text-wrap style="margin-top: 5px">{{scheduleDataDetails.TopicName}}</p> -->
+            <p text-wrap style="margin-top: 5px;color: #999999;font-size: 1.3rem">{{(scheduleDataDetails.LectureTimeStart)}} - {{(scheduleDataDetails.LectureTimeEnd)}} {{ !stringIsNumber(scheduleDataDetails.FacultyName) ?' . Lecture': ' . Test'}}</p>
+            <ion-icon name="ios-arrow-forward" item-end></ion-icon>
+        </ion-item>
+    
+
+    </ion-item-group>
+        <!--   <ion-grid>
+            
+             <ion-row>
+                <ion-col class="leftTxt" col-3>
+                    Date :
+                </ion-col>
+                <ion-col class="rightTxt" col-9>
+                    {{scheduleData.LectureDate | date: 'EEE, MMMM d, y' || 'NA'}}
+                </ion-col>
+
+                <ion-col class="leftTxt" col-3>
+                    Time :
+                </ion-col>
+                <ion-col class="rightTxt" col-9>
+                    {{scheduleData.LectureTimeStart}} - {{scheduleData.LectureTimeEnd || 'NA'}}
+                </ion-col>
+
+
+                <ion-col class="leftTxt" col-3>
+                    Standard :
+                </ion-col>
+                <ion-col class="rightTxt" col-9>
+                    {{scheduleData.StandardName || 'NA'}}
+                </ion-col>
+
+
+                <ion-col class="leftTxt" col-3>
+                    Subject :
+                </ion-col>
+                <ion-col class="rightTxt" col-9>
+                    {{scheduleData.SubjectName || 'NA'}}
+                </ion-col>
+
+
+                <ion-col class="leftTxt" col-3>
+                    Topics :
+                </ion-col>
+                <ion-col class="rightTxt" col-9>
+                    {{scheduleData.TopicName || 'NA'}}
+                </ion-col>
+
+                <ion-col class="leftTxt" col-3>
+                    Faculty :
+                </ion-col>
+                <ion-col class="rightTxt" col-9>
+                    {{scheduleData.FacultyName || 'NA'}}
+                </ion-col>
+            </ion-row> 
+        </ion-grid>-->
+    </ion-card>
+
+    <ion-card *ngIf="nodata">
+        <ion-item>
+            No schedules found for the selected date range.
+        </ion-item>
+    </ion-card>
+</ion-content>

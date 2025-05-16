@@ -1,0 +1,134 @@
+<!--
+  Generated template for the PerformanceDetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar style="background-color:btn">
+        <ion-title>Performance Detail</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content no-padding>
+    <ion-refresher (ionRefresh)="refreshPerformanceDetail($event)">
+        <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+    <ion-card style="background:#f7f7f7 !important;">
+        <ion-card-content>
+            <ion-grid>
+			  <ion-row >            
+				<ion-col col-12>
+				  <p style="color: #000000!important;font-size: 20px !important;">{{StandardName+'/'}} {{SubjectName}}</p>               
+				</ion-col>
+			  </ion-row>
+			</ion-grid> 
+              <!-- {{StandardName+'/'}} {{SubjectName}}-->
+			
+        </ion-card-content>
+		
+		
+    </ion-card>
+    <ion-card class="cardContainer" *ngFor="let performanceDetailData of performanceDetail">
+       
+        <ion-item-group>
+
+           <ion-item-divider style="color: #003b8e">
+                {{performanceDetailData.ExamName}}<br/>{{performanceDetailData.ExamDate | date: 'EEE, MMMM d, y'}}
+            </ion-item-divider>
+            <ion-grid>
+                <ion-row class="detailRow">
+                    <ion-col class="colBorder" col-6>
+                        <!-- {{(performanceDetailData.MarksScored || performanceDetailData.MarksScored  ) || 'Absent'}} -->
+                        {{ (performanceDetailData.MarksScored != null)?performanceDetailData.MarksScored:'Absent' }}
+                    </ion-col>
+                    <ion-col col-6>
+                        {{performanceDetailData.ExamTotalMarks || '-'}}
+                    </ion-col>
+                </ion-row>
+                <ion-row class="subdetailRow">
+                    <ion-col [ngClass]="performanceDetailData.MarksScored != null ? 'colBorder colActiveSubTxtColor':'colBorder colSubTxtColor'"  col-6>
+                        {{ (performanceDetailData.MarksScored != null)?'Marks':'Marks' }}
+                    </ion-col> 
+                    <ion-col col-6>
+                        Maximum
+                    </ion-col>
+                </ion-row>
+
+            </ion-grid>
+
+            <!-- <ion-item style="font-weight: bold;font-size: 17px">Result</ion-item> -->
+            <ion-item style="font-weight: bold;font-size: 17px" [ngClass]="(performanceDetailData.MarksScored >= performanceDetailData.ExamPassingMarks)?'closeTxt':(performanceDetailData.MarksScored == null || performanceDetailData.MarksScored == 0)?'openTxt':'openTxt'">Result : {{(performanceDetailData.MarksScored >= performanceDetailData.ExamPassingMarks) ? 'Pass':(performanceDetailData.MarksScored == null)?'Absent':(performanceDetailData.MarksScored == 0)?'Fail':'Fail'}}</ion-item>
+            
+            <!--<hr style="color: #dedede;height: 2px">-->
+			<hr style="border-bottom: 0.4px solid #dedede">
+
+            <ion-item style="font-weight: bold;font-size: 17px">Analysis :</ion-item>
+            <div style="z-index: 100000">
+                <ion-item style="align-items: left;min-height:2.4rem">
+                    <ion-label class="subLbl">Percentage : {{performanceDetailData.Percentage == null ?'-': performanceDetailData.Percentage+'%'}} </ion-label>
+                    <ion-range *ngIf="performanceDetailData.Percentage != null" [(ngModel)]="performanceDetailData.Percentage" min="0" max="100" color="primary" step="performanceDetailData.Percentage"
+                        class="marks" disabled></ion-range>
+                </ion-item>
+            </div>
+            <!-- <hr [ngStyle]="{'color':'#0678CB','height': '6px', 'margin-left':'16px','width':performanceDetailData.MarksScored-9.1+'%'}" > -->
+
+            <!-- <ion-item style="align-items: left;min-height:2.4rem">
+                <ion-label class="subLbl">Average : {{ ((performanceDetailData.HigestMarks+performanceDetailData.LowestMarks)/2) || 'NA'}} </ion-label>
+                <ion-range [(ngModel)]="performanceDetailData.Percentage" min="0" max="100" color="average" step="performanceDetailData.Percentage"
+                    class="average" disabled></ion-range>
+            </ion-item> -->
+
+            <ion-item style="align-items: left;min-height:2.4rem">
+                <ion-label class="subLbl">Lowest : {{performanceDetailData.LowestMarks == null ? '-': performanceDetailData.LowestMarks+'%'}} </ion-label>
+                <ion-range *ngIf="performanceDetailData.LowestMarks != null" [(ngModel)]="performanceDetailData.LowestMarks" min="0" max="100" color="average" step="performanceDetailData.LowestMarks"
+                    class="average" disabled></ion-range>
+            </ion-item>
+
+            <!-- <hr [ngStyle]="{'color':'#e63900','height': '6px', 'margin-left':'16px','width':performanceDetailData.Percentage-9.1+'%'}" > -->
+
+            <ion-item style="align-items: left;min-height:2.4rem">
+                <ion-label class="subLbl">Highest : {{performanceDetailData.HigestMarks == null ? '-': performanceDetailData.HigestMarks+'%'}} </ion-label>
+                <ion-range *ngIf="performanceDetailData.HigestMarks != null" [(ngModel)]="performanceDetailData.HigestMarks" min="0" max="100" color="highest" step="performanceDetailData.HigestMarks"
+                    class="highest" disabled></ion-range>
+            </ion-item>
+            <!-- <hr [ngStyle]="{'color':'#4d9900','height': '6px', 'margin-left':'16px','width':performanceDetailData.HigestMarks-9.1+'%'}" > -->
+
+            <!-- <ion-item style="align-items: left">
+                    <ion-label class="subLbl">highest :  {{performanceDetailData.HigestMarks}} </ion-label>
+                    
+            </ion-item> -->
+            
+
+            <hr style="border-bottom: 0.4px solid #dedede">
+
+            <ion-item style="font-weight: bold;font-size: 17px">Rank : {{(performanceDetailData.Rank == null || performanceDetailData.Rank == 0 || (performanceDetailData.MarksScored < performanceDetailData.ExamPassingMarks) ) ? '-':performanceDetailData.Rank }}</ion-item>
+			
+			<hr style="border-bottom: 0.4px solid #dedede">
+			<ion-item style="font-weight: bold;font-size: 17px">Topics :</ion-item>
+			<ion-card-content>
+				<ion-grid>
+				  <ion-row >            
+					<ion-col col-12>
+						 
+					  <!--<p style="font-weight:bold;font-size: 17px;">Topics</p>          -->     
+					   <p class="subLbl" style="padding-top:5px;">{{performanceDetailData.TopicName}}</p>               
+					</ion-col>
+				  </ion-row>
+				</ion-grid> 
+			</ion-card-content>
+
+        </ion-item-group>
+
+    </ion-card>
+
+    <ion-card *ngIf="nodata">
+        <ion-item>
+            Data not available!
+        </ion-item>
+    </ion-card>
+
+</ion-content>

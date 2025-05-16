@@ -1,0 +1,54 @@
+page-performance-detail {
+.detailRow{
+    align-items: flex-end;
+    text-align: center;
+    height: 40px;
+    font-weight: bold;
+    font-size: 18px;
+    color: color($colors,'themeColor')
+}
+.subdetailRow{
+    align-items: center;
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+    padding-bottom: 12px;
+    border-bottom: 0.5px solid #dedede 
+}
+.colBorder {
+    border-right: 0.5px solid #dedede 
+}
+.range-md .range-knob {
+    width: 0%;
+    height: 0%;
+}
+.item-range ion-range {
+    padding: 0;
+}
+.subLbl{
+    margin: 0px;
+}
+.range-md .range-bar{
+    height: 5px;
+
+}
+
+.colActiveSubTxtColor {
+    color: #666;
+}
+.colSubTxtColor {
+    color: transparent;
+}
+
+.marks.range-md.range-disabled .range-bar-active{
+    background-color: color($colors,'primary')
+}
+.average.range-md.range-disabled .range-bar-active{
+    background-color: color($colors,'average')
+}
+
+.highest.range-md.range-disabled .range-bar-active{
+    background-color: color($colors,'highest')
+}
+
+}

@@ -1,0 +1,22 @@
+ 
+
+
+payONline = 1 : btn -> Pay url
+Pay_url 
+
+
+fetchStudentMenu
+value =0; then show
+
+
+fcm/saveFcmData
+userRole : Student, Father, Mother, Guardian
+
+
+ 		//Parent = this.navParams.data.Parent,
+        //ParentID = this.navParams.data.ParentID,
+        //StudentID = this.navParams.data.StudentId,
+        //Amount = this.navParams.data.Amount
+        
+        
+        /// this is testing

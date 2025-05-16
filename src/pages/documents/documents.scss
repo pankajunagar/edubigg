@@ -1,0 +1,19 @@
+page-documents {
+    .headingData {
+        background: color($colors,'themeColor');
+        color: #fff
+    }
+    .headingData .col{
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        color: #fff
+    }
+    .subDetail .row {
+   // text-align: center;
+  //  height: 45px;
+    min-height: 45px;
+    align-items: center;
+    border-bottom: 1px solid #e6e6e6
+}
+}

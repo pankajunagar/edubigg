@@ -1,0 +1,70 @@
+<!--
+  Generated template for the LeavePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<!-- <ion-header>
+
+  <ion-navbar>
+    <ion-title>Leaves</ion-title>
+  </ion-navbar>
+
+</ion-header> -->
+
+<ion-header class="home_header">
+
+    <ion-navbar style="background-color:btn">
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Leaves</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+
+
+<ion-content no-padding>
+
+  <ion-refresher (ionRefresh)="refreshLeaves($event)" >
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <ion-card class="cardContainer" *ngFor="let leaveDataDetail of leaveData">
+    <ion-item-group>
+      <ion-item-divider style="color: #003b8e">
+
+        {{leaveDataDetail.LeaveStartDate1}} - {{leaveDataDetail.LeaveendDate1}}
+
+      </ion-item-divider>
+
+      <ion-item style="border-bottom: 0.4px solid #f2f2f2" text-nowrap>
+        <p text-wrap style="font-size: 16px;color: #1a2532;margin-top: 5px">{{leaveDataDetail.LeaveReason}}</p>
+        <!-- <p text-wrap style="margin-top: 5px"></p> -->
+      </ion-item>
+
+
+    </ion-item-group>
+  </ion-card>
+
+  <ion-card *ngIf="nodata">
+      <ion-item>
+          No leave found.
+      </ion-item>
+    </ion-card>
+    
+  
+  
+
+  <!-- <ion-fab bottom right #fab>
+      <button  ion-fab (click)="openLeaveForm()" ><ion-icon name="ios-add-outline"></ion-icon></button>
+  </ion-fab> -->
+</ion-content>
+
+<ion-footer>
+<div *ngIf="check">
+    <ion-fab bottom right #fab >
+      <button ion-fab (click)="openLeaveForm()" ><ion-icon name="ios-add-outline"></ion-icon></button>
+    </ion-fab>
+  </div>
+</ion-footer>

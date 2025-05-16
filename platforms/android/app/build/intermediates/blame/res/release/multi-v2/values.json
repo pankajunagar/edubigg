@@ -1,0 +1,177 @@
+{
+    "logs": [
+        {
+            "outputFile": "D:\\EduBiggApps\\AppNewdeepak\\platforms\\android\\app\\build\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values\\values.xml",
+            "map": [
+                {
+                    "source": "D:\\EduBiggApps\\AppNewdeepak\\platforms\\android\\app\\build\\generated\\res\\google-services\\release\\values\\values.xml",
+                    "from": {
+                        "startLines": "-1,-1,-1,-1,-1,-1,-1,-1",
+                        "startColumns": "-1,-1,-1,-1,-1,-1,-1,-1",
+                        "startOffsets": "-1,-1,-1,-1,-1,-1,-1,-1"
+                    },
+                    "to": {
+                        "startLines": "118,120,121,122,123,124,125,127",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "7634,7860,7980,8062,8166,8275,8395,8563",
+                        "endColumns": "143,119,81,103,108,119,108,85",
+                        "endOffsets": "7773,7975,8057,8161,8270,8390,8499,8644"
+                    }
+                },
+                {
+                    "source": "D:\\EduBiggApps\\AppNewdeepak\\platforms\\android\\app\\src\\main\\res\\values\\colors.xml",
+                    "from": {
+                        "startLines": "-1,-1,-1",
+                        "startColumns": "-1,-1,-1",
+                        "startOffsets": "-1,-1,-1"
+                    },
+                    "to": {
+                        "startLines": "2,14,15",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "150,1085,1129",
+                        "endColumns": "42,43,48",
+                        "endOffsets": "188,1124,1173"
+                    }
+                },
+                {
+                    "source": "D:\\EduBiggApps\\AppOld\\platforms\\android\\.gradle\\4.10.3\\caches\\transforms-1\\files-1.1\\support-media-compat-26.1.0.aar\\af04bc4487ef6cd76f583a37c3cf9602\\res\\values\\values.xml",
+                    "from": {
+                        "startLines": "-1,-1,-1,-1,-1,-1,-1,-1,-1",
+                        "startColumns": "-1,-1,-1,-1,-1,-1,-1,-1,-1",
+                        "startOffsets": "-1,-1,-1,-1,-1,-1,-1,-1,-1"
+                    },
+                    "to": {
+                        "startLines": "13,16,18,92,137,139,140,145,147",
+                        "startColumns": "4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "996,1178,1307,4661,9260,9436,9558,9820,10015",
+                        "endColumns": "88,70,72,59,65,121,60,65,66",
+                        "endOffsets": "1080,1244,1375,4716,9321,9553,9614,9881,10077"
+                    }
+                },
+                {
+                    "source": "D:\\EduBiggApps\\AppNewdeepak\\platforms\\android\\app\\src\\main\\res\\values\\strings.xml",
+                    "from": {
+                        "startLines": "-1,-1,-1",
+                        "startColumns": "-1,-1,-1",
+                        "startOffsets": "-1,-1,-1"
+                    },
+                    "to": {
+                        "startLines": "95,96,126",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "4859,4923,8504",
+                        "endColumns": "63,62,58",
+                        "endOffsets": "4918,4981,8558"
+                    }
+                },
+                {
+                    "source": "D:\\EduBiggApps\\AppOld\\platforms\\android\\.gradle\\4.10.3\\caches\\transforms-1\\files-1.1\\play-services-base-16.0.1.aar\\02cc3ff81ae79e2f4062226af23cdbcd\\res\\values\\values.xml",
+                    "from": {
+                        "startLines": "-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1",
+                        "startColumns": "-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1",
+                        "startOffsets": "-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1"
+                    },
+                    "to": {
+                        "startLines": "3,4,5,6,7,8,9,10,98,99,100,101,102,103,104,105,107,108,109,110,111,112,113,114,115",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "193,283,363,453,543,623,704,784,5151,5256,5437,5562,5669,5849,5972,6088,6358,6546,6651,6832,6957,7132,7280,7343,7405",
+                        "endColumns": "89,79,89,89,79,80,79,79,104,180,124,106,179,122,115,102,187,104,180,124,174,147,62,61,78",
+                        "endOffsets": "278,358,448,538,618,699,779,859,5251,5432,5557,5664,5844,5967,6083,6186,6541,6646,6827,6952,7127,7275,7338,7400,7479"
+                    }
+                },
+                {
+                    "source": "D:\\EduBiggApps\\AppNewdeepak\\platforms\\android\\app\\build\\generated\\fabric\\res\\release\\values\\com_crashlytics_build_id.xml",
+                    "from": {
+                        "startLines": "8",
+                        "startColumns": "0",
+                        "startOffsets": "311",
+                        "endColumns": "162",
+                        "endOffsets": "473"
+                    },
+                    "to": {
+                        "startLines": "97",
+                        "startColumns": "4",
+                        "startOffsets": "4986",
+                        "endColumns": "164",
+                        "endOffsets": "5146"
+                    }
+                },
+                {
+                    "source": "D:\\EduBiggApps\\AppNewdeepak\\platforms\\android\\app\\src\\main\\res\\values\\cordova-plugin-firebase-strings.xml",
+                    "from": {
+                        "startLines": "-1,-1",
+                        "startColumns": "-1,-1",
+                        "startOffsets": "-1,-1"
+                    },
+                    "to": {
+                        "startLines": "116,117",
+                        "startColumns": "4,4",
+                        "startOffsets": "7484,7564",
+                        "endColumns": "79,69",
+                        "endOffsets": "7559,7629"
+                    }
+                },
+                {
+                    "source": "D:\\EduBiggApps\\AppOld\\platforms\\android\\.gradle\\4.10.3\\caches\\transforms-1\\files-1.1\\firebase-messaging-18.0.0.aar\\78efa2281f376374285e729722d73428\\res\\values\\values.xml",
+                    "from": {
+                        "startLines": "-1",
+                        "startColumns": "-1",
+                        "startOffsets": "-1"
+                    },
+                    "to": {
+                        "startLines": "119",
+                        "startColumns": "4",
+                        "startOffsets": "7778",
+                        "endColumns": "81",
+                        "endOffsets": "7855"
+                    }
+                },
+                {
+                    "source": "D:\\EduBiggApps\\AppOld\\platforms\\android\\.gradle\\4.10.3\\caches\\transforms-1\\files-1.1\\play-services-basement-16.2.0.aar\\e0e023c769510bea0d818763ed84c3be\\res\\values\\values.xml",
+                    "from": {
+                        "startLines": "-1,-1",
+                        "startColumns": "-1,-1",
+                        "startOffsets": "-1,-1"
+                    },
+                    "to": {
+                        "startLines": "93,106",
+                        "startColumns": "4,4",
+                        "startOffsets": "4721,6191",
+                        "endColumns": "67,166",
+                        "endOffsets": "4784,6353"
+                    }
+                },
+                {
+                    "source": "D:\\EduBiggApps\\AppOld\\platforms\\android\\.gradle\\4.10.3\\caches\\transforms-1\\files-1.1\\play-services-tagmanager-16.0.8.aar\\1eef21daca48a03fa24727223083d4fd\\res\\values\\values.xml",
+                    "from": {
+                        "startLines": "-1,-1,-1",
+                        "startColumns": "-1,-1,-1",
+                        "startOffsets": "-1,-1,-1"
+                    },
+                    "to": {
+                        "startLines": "129,130,131",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "8720,8790,8874",
+                        "endColumns": "69,83,67",
+                        "endOffsets": "8785,8869,8937"
+                    }
+                },
+                {
+                    "source": "D:\\EduBiggApps\\AppOld\\platforms\\android\\.gradle\\4.10.3\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\580ac21f936ba31650af1c4890c55b89\\res\\values\\values.xml",
+                    "from": {
+                        "startLines": "-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1",
+                        "startColumns": "-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1",
+                        "startOffsets": "-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1"
+                    },
+                    "to": {
+                        "startLines": "11,12,17,19,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,94,128,132,133,138,141,146,148,149",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "864,933,1249,1380,3020,3090,3158,3230,3300,3361,3422,3483,3545,3609,3671,3732,3800,3900,3960,4026,4099,4168,4225,4277,4339,4411,4487,4522,4557,4591,4626,4789,8649,8942,9059,9326,9619,9886,10082,10154",
+                        "endLines": "11,12,17,19,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,94,128,132,136,138,144,146,148,149",
+                        "endColumns": "68,62,57,73,69,67,71,69,60,60,60,61,63,61,60,67,99,59,65,72,68,56,51,61,71,75,34,34,33,34,34,69,70,116,12,109,12,128,71,66",
+                        "endOffsets": "928,991,1302,1449,3085,3153,3225,3295,3356,3417,3478,3540,3604,3666,3727,3795,3895,3955,4021,4094,4163,4220,4272,4334,4406,4482,4517,4552,4586,4621,4656,4854,8715,9054,9255,9431,9815,10010,10149,10216"
+                    }
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,72 @@
+<!--
+  Generated template for the DocumentsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header class="home_header">
+
+  <ion-navbar style="background-color:btn">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Documents</ion-title>
+  </ion-navbar>
+
+  <ion-searchbar [(ngModel)]="companyValue" (ionCancel)="hideList()" (ionClear)="hideList()" (keyup)="getTextData($event.target.value)">
+  </ion-searchbar>
+  
+</ion-header>
+
+
+<ion-content no-padding>
+
+    <ion-refresher (ionRefresh)="refreshDoc($event)"> 
+        <ion-refresher-content></ion-refresher-content>
+      </ion-refresher>
+<!-- 
+  <ion-card class="cardContainer"> -->
+      
+      
+    <!-- <ion-grid class="subDetail">
+      <ion-row *ngFor="let documentsData of documents" (click)="download(documentsData.URL)">
+        <ion-col text-left col-1>
+          <ion-icon name="ios-document-outline" style="color: darkgrey;font-size: 25px;font-weight: bold"></ion-icon>
+
+
+
+        </ion-col>
+        <ion-col text-left style="text-overflow: ellipsis;" col-10>
+          <ion-row style="border-bottom :0px;min-height: 30px">
+              {{documentsData.UploadFileName}}
+          </ion-row>
+          <ion-row style="border-bottom :0px;min-height: 30px;color: darkgrey">
+              {{ documentsData.UploadFileName.substring(documentsData.UploadFileName.indexOf(".")+1) }} - {{ calculateSize(documentsData.UploadFileSize) }} - {{documentsData.ActualTime | date: 'EEE, MMMM d, y'}}
+          </ion-row>
+        </ion-col>
+        <ion-col col-1>
+          <ion-icon name="md-cloud-download" style="color: #78B254;font-size: 25px;font-weight: bold"></ion-icon>
+        </ion-col>
+      </ion-row>
+    </ion-grid> -->
+  <!-- </ion-card> -->
+
+  <ion-card class="cardContainer" *ngFor="let documentsData of documents">
+    <ion-item-group>
+      <ion-item style="border-bottom: 0.4px solid #f2f2f2" (click)="download(documentsData.URL,documentsData.UploadFileName)" text-nowrap>
+        <ion-icon [ngClass]="getClass(documentsData.UploadFileName.substring(documentsData.UploadFileName.lastIndexOf('.')+1))" [ngStyle]="{ 'color': getColor(documentsData.UploadFileName.substring(documentsData.UploadFileName.lastIndexOf('.')+1))}" class="iconFont" item-start></ion-icon>
+        <p text-wrap style="font-size: 16px;color: #1a2532;margin-top: 5px">{{documentsData.UploadFileName}}</p>
+        <p text-wrap style="margin-top: 5px">{{ getFileName(documentsData.UploadFileName.substring(documentsData.UploadFileName.lastIndexOf(".")+1)) }} - {{ calculateSize(documentsData.UploadFileSize) }}{{documentsData.ActualTime | date: 'EEE, MMMM d, y'}}</p>
+        <p text-wrap style="margin-top: 5px">{{documentsData.Description}}</p>
+        <ion-icon name="md-cloud-download" style="color: #78B254" item-end></ion-icon>
+      </ion-item>
+    </ion-item-group>
+  </ion-card>
+
+  <ion-card *ngIf="nodata">
+      <ion-item>
+          No files shared yet.
+      </ion-item>
+  </ion-card>
+
+</ion-content>

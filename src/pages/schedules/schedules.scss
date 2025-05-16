@@ -1,0 +1,189 @@
+page-schedules {
+
+    .testClassColor {
+        color: #c62828
+    }
+
+    .lectureClassColor {
+        color: #003b8e
+    }
+    //new
+.datebtn{
+    .button-inner {
+        justify-content: left;
+    }
+}
+    .item-ios item-md ion-avatar img {
+        width: 85px;
+        height: 80px;
+        border-radius: 0;
+        overflow: hidden;
+    }
+    
+    .item-md ion-avatar img {
+        width: 85px;
+        height: 80px;
+        border-radius: 0;
+        overflow: hidden;
+    }
+    .item-ios h5{
+    font-size: 19px;
+    color: #fe4040;
+    }
+    
+    .item-md h5{
+    font-size: 19px;
+    color: #fe4040;
+    }
+    
+    .item-ios {
+        padding-left: 10px
+    }
+    
+    .item-md {
+        padding-left: 10px
+    }
+    
+    ion-icon {
+        font-size: 16px;
+        padding: 2px
+    }
+    
+
+    //end
+    .searchbar {
+        padding: 0
+    }
+    
+    .abc {
+       height: 170px;//165
+       //min-height: auto
+        width: 100%;
+    }
+    .itemName {
+       // border-bottom: 1px solid #dedede;
+        text-transform: capitalize; 
+    }
+    
+    .cardContainer {
+       // width: 100%;
+        //margin: 16px 0 0 0;
+        .grid{
+            padding: 15px;
+        }
+    }
+    .headingData {
+        background: #c0dda2;
+        color: #000
+    }
+    .headingData .col{
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        color: #000
+    }
+    
+    ion-app.md [padding] .scroll-content {
+        padding-top: 0px;
+    }
+    .fab .button-inner {
+        font-size: 5rem;
+        font-weight: 100;
+    }
+    .tabs-md .tab-button[aria-selected=true] .tab-button-icon{
+      //  font-size: 2.6rem
+    }
+    
+    .subDetail .row {
+        text-align: center;
+        height: 45px;
+        align-items: center;
+        border-bottom: 1px solid #e6e6e6
+    }
+    .amountClass {
+        font-size: 1.6rem;
+        color: #fff;
+        font-weight: 300;
+    }
+    .datalistOption {
+        min-height: 3rem;
+        max-height: 3rem;
+        color: red
+    }
+    .datalistContainer {
+        min-height: 3rem;
+        max-height: 3rem;
+        color: red
+    }
+    .headingTitle {
+        color: #E65100
+    }
+    .buyClass {
+        background: #f2f8ec 
+    }
+    .sellClass {
+        background: #ffebe6
+    }
+    }
+    
+    ion-app.md [padding] .scroll-content {
+        padding-top: 0px;
+     //   background: color($colors,secondary)
+    }
+    
+    .datetime-md .datetime-placeholder{
+        color: color($colors,txtColor);
+    }
+    .dateCardView {
+        margin: 0;
+        top: 18px;
+        position: relative;
+        width: 100%
+    }
+    .dateInnerContainer {
+        padding: 0px 7px;
+    }
+    
+    .datetime-text{
+     //   font-size: medium
+    }
+    .tabs-md .tab-button-text {
+      //  font-size: 1.4rem;
+    }
+    .tabs-md .tabbar    {
+        background: #fff//#F1F8E9
+    }
+    .toolbar-title-md {
+        color: #fff
+    }
+
+    .leftTxt{
+        color: color($colors,'btn')
+    }
+
+    .rightTxt{
+        color: color($colors,'themeColor')
+    }
+    
+    
+    
+    .tabs-md .tab-button-icon {
+       // color: #fff
+    }
+    
+    ion-fab[bottom]{
+        bottom: 16px;
+    }
+    ion-fab[right]{
+        right: 16px;
+    }
+    .loading-md .loading-spinner + .loading-content{
+        width: 100%
+    }
+    .bar-button-default-md {
+        color: #fff
+    }
+
+    .datetime-md {
+        padding: 13px 8px 13px 0px;
+    }

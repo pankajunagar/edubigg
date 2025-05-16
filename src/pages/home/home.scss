@@ -1,0 +1,49 @@
+page-home {
+    .userImg{
+        width: 90px;
+        height: 90px;
+        border-radius: 45px;
+        border: 2px solid #fff;
+        margin-top: 50px;
+        
+    }
+    .toolbar-background {
+      background-color:color($colors,'btn');
+    }
+    .sliderIcon{
+      color: #fff;
+      font-size: 1.7em;
+      width: 30px;
+    }
+    .sliderLbl{
+        margin-left: 10px;
+        text-align: left;
+        color: #fff;
+        font-size: 16px;
+        font-weight: lighter;
+       // text-transform: capitalize
+    }
+    
+    .button-clear-ios{
+        border-bottom: 1px solid #4f4f4f;
+    }
+
+    
+    .button-clear-md{
+        height: 40px
+    }    
+        
+    
+    }
+    
+    .content-ios hr {
+        height: 1px;
+        background-color: #4f4f4f;
+        margin: 0px;
+    }
+    .toolbar-title{
+        color: #fff
+    }
+    .bar-button-default-md{
+        color: #fff
+    }

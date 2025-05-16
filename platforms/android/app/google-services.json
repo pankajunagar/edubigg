@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "899038124121",
+    "firebase_url": "https://avalon-learning-solutions.firebaseio.com",
+    "project_id": "avalon-learning-solutions",
+    "storage_bucket": "avalon-learning-solutions.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:899038124121:android:9f6a882c0913084ce6f948",
+        "android_client_info": {
+          "package_name": "com.AvalonLSPIS"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "899038124121-gb8c9nafnleq7flhiptml22f73820od9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCZF8ZysPlA7ZfGVLAD_hnbB_0ST3XNOGE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "899038124121-gb8c9nafnleq7flhiptml22f73820od9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
